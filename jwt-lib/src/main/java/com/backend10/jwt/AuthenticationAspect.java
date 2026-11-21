@@ -21,7 +21,7 @@ public class AuthenticationAspect {
 		this.jwtUtil = jwtUtil;
 	}
 
-	@Around("@annotation(com.backend10.jwt.RequireJwt) || @within(com.backend10.jwt.RequireJwt)")
+	@Around("@annotation(com.backend10.jwt.RequireJwt)")
 	public Object handleAuthentication(ProceedingJoinPoint pjp) throws Throwable {
 		log.info("RequireJwt triggered !!!");
 		ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
